@@ -1,0 +1,4 @@
+## Deploy
+run the following command from the function directory
+```gcloud functions deploy [function name] \
+--runtime python310 --trigger-http --allow-unauthenticated```
