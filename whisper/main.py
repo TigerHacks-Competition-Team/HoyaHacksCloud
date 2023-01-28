@@ -1,8 +1,8 @@
 import functions_framework
-import whisper as wspr
+import whisper
 
 @functions_framework.http
-def whisper(request):
+def whisper_api(request):
     """HTTP Cloud Function.
     Args:
         request (flask.Request): The request object.
@@ -17,7 +17,7 @@ def whisper(request):
         <https://cloud.google.com/functions/docs/writing/http#http_frameworks>
     """
     try:
-        model = wspr.load_model("base")
+        model = whisper.load_model("base")
         return "Model Loaded"
     except Exception as e:
-        return e
+        return str(e)

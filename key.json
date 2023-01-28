@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hoyahacks-376115",
+  "private_key_id": "da2b1308e387d70831696f1ca607a06fbd2351e4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCkJSw3rnMpuh0r\n0QA8JLWHeOJMxz6l6HS99TEDantsRYl7zHrnckmkQfOYwVoiC7e06DvFL+HEUfom\nJSzx/GD8uNjF/rNj69n1zwE2YPMdQ/sS3Zgi24rgi+n6QgvDkjTNcg/BpGPPfMvq\ni0vaHRNECucFVKz8ZILusIqApqBlPOjefu/j4fanp92jRJ1VX7FSQwbf/d8lrdi2\nq0ifp9vr0rYaSDbLZgLH5WFfu6+Qxrneg8uv0zIwWnnjPvl0NheKlyKin+e2iklt\nVOTn++J6noam2uTsZdP5HNx6qEatdkJdrqur4ge0QhfN4CBGN8/0UTfF1ywAGRCq\ncZJZS9/XAgMBAAECggEAGPViBNFsx2J6PwhXfc2jIIc7+aquFvIClkOrATb2r17f\naciMw5Z4Jha1IHv95YFcnJBXTkNak8xXOeebLuxOHv9ITsrMohvhl2Ozbn5NWRzW\nF2dEU8CIHF6J5DiYq1MW3kpCpRIG7yytoOsvTGnxXP4/ZGscpn/t/LcxSCCN8PaU\njDNYAGOakTaJSD1KR+O9CjgeZDlnNHTkRI5oAk0JKPPStyRX6nrXRAleRFzW28nj\nStFa2MvKEdiQJJs+oIDcH4QkxHhylXWubI4JezUSYnxeQXOfN+xtsvOSN2JECGRx\neroQwKRPqZ09AMHYnBebntQsRBvo+zhe+NMKgPhXKQKBgQDZQ5TKtjCAhx0l3Z9l\nZ21DDqVBojfY/5ZjO4NxGdaFFAVnuJKzUEdULec2iiBkdF/5g9Mr9fIupuyrMMr6\n3ZmM2zwt4NDkXCzFixSXbaHpV0w7Uww5vmL+gV+G1s8i1gOu36s6RXzb4Bd5uq81\nzS+3gIQedMcDypM9yGqk9GHN9QKBgQDBaSFflBp1DYdW+mxnmvfT0UQzIkpko9DL\nBFkgVeETR1+rj1UzW89iQRbmHuxDKBjHyUS1jwMH3LMKwXjETewWWfSF6j0yHGuL\ne2B9vjXCyhtTEI3jHkxD7LLmbfbNGHTdp5dnkXm9srHvo/u6dbzbbXYIiK1ghJzp\n/7LV9vcrGwKBgQC0qV2wso7iUXgLZJ6G09onSKZiTWHjL6T+Hx7NjY60WlGkTfau\n5LJrbUA2OeV1os+ry9JtW7Zm1Kc4MvqWYG6ukh8YhzksqvkPyvb0dFWOkujw673e\nxlHLEAk/NqBHd27Ym2Tmr6GDtHPQ5UuMkXJ8RIGYUcKrhGermFwVjqFFgQKBgFSK\nxsrHq1T1J+6uIkqbY68UL1KGr6wUK0VCzk6jG3JY5YnRanW7sQgK2Z6Xb8DfOw3B\nfaY7MCD0qNKPxWFRilwu0ALlZACOibf7oy7zwP43aABEITFg4gdi5MRy1snJ4fOt\nuTHNVkDEZqEQtg1IP9hOnaSXUen5rblfSuXaQSp3AoGBALD0muJgiG06bF/pST46\ntAp6upLxrW3PpalMQQAj8LLgZKwUIoqckh7bqDGWx4IlVK9FMS8jyo0R4R9ppb2t\np+EyNjYpXzRtKA2ptiszDOI4KMNAK8nh/b3e6dXbeyabgtlfFaZ2+2pv9i3+Kfr4\nqrfn+e8PjbPgCdmCtfCC7K7T\n-----END PRIVATE KEY-----\n",
+  "client_email": "my-speech-to-text-sa@hoyahacks-376115.iam.gserviceaccount.com",
+  "client_id": "117293899334890322165",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/my-speech-to-text-sa%40hoyahacks-376115.iam.gserviceaccount.com"
+}
