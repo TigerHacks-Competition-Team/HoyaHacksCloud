@@ -2,6 +2,7 @@ import functions_framework
 from urllib.request import urlopen
 import json
 import requests
+import os
 
 
 # Register a CloudEvent function with the Functions Framework
@@ -25,12 +26,16 @@ def trans_end(cloud_event):
     for result in data_json["results"]:
         transcription = transcription + " " + result["alternatives"][0]["transcript"]
 
-    headers = {"Content-Type": "application/json; charset=utf-8"}
+    headers = {
+        "Content-Type": "application/json", 
+        "Authorization": f"Bearer {os.environ.get('SUPABASE_KEY')}"
+    }
     data = {
         "id": id,
         "transcription": transcription
     }
-    
+    print(f"Callback with key {os.environ.get('SUPABASE_KEY')}")
     callback = "https://hkwrlworzfpsgkaxcobm.functions.supabase.co/transcription_callback"
     response = requests.post(callback, headers=headers, json=data)
+    print(f"Callback request sent: {transcription}")
     return "Hello World"
