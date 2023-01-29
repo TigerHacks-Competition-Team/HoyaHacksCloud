@@ -3,6 +3,7 @@ import yt_dlp
 from google.cloud import storage
 import os
 from flask import Response
+import json
 
 final_filename = None
 
@@ -15,11 +16,11 @@ def yt_dlp_monitor(d):
 def yt2mp3(request):
     global final_filename
     ydl_opts = {
-        'format': 'mp3/bestaudio/best',
+        'format': 'm4a/bestaudio/best',
         # Extract audio using ffmpeg
         'postprocessors': [{  
             'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
+            'preferredcodec': 'm4a',
         }],
         "outtmpl": "/tmp/%(id)s.%(ext)s",
         "no-part": True,
@@ -29,28 +30,46 @@ def yt2mp3(request):
     URL = [request.json["url"]]
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        error_code = ydl.download(URL)
+        try:
+            error_code = ydl.download(URL)
+        except:
+            return('', 500)
 
         bucket = "hoya-hacks-video-files"
 
         storage_client = storage.Client()
 
-        bucket = storage_client.get_bucket(bucket, timeout = 0.1)
+        bucket = storage_client.get_bucket(bucket, timeout = 60)
 
         id = final_filename.split("/")[2].split(".")[0]
 
-        mp3_path = "/tmp/" + id + ".mp3"
+        mp3_path = "/tmp/" + id + ".m4a"
 
-        file = bucket.blob(id + ".mp3")
+        file = bucket.blob(id + ".m4a")
 
+        print("Uploading Audio to Bucket")
         file.upload_from_filename(mp3_path)
 
         #file.make_public()
 
-        os.remove(mp3_path)
+        #os.remove(mp3_path)
 
         final_filename = None
 
-        return Response(status = 200)
+        if request.method == 'POST':
+            headers = {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST',
+                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Max-Age': '3600'
+            }
 
-    return request.json["url"]
+            return("https://storage.cloud.google.com/hoya-hacks-video-files/" + id + ".m4a", 200, headers)
+
+    headers = {
+        'Content-Type':'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+    }
+
+    return ('', 200, headers)
